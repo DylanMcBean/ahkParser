@@ -1,0 +1,57 @@
+{
+  "version": 8,
+  "configurePresets": [
+    {
+      "name": "windows_clang_debug",
+      "displayName": "Clang Debug",
+      "description": "Using Clang with Ninja in Debug mode on Windows",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+        "CMAKE_C_COMPILER": "C:/Users/User/Documents/clang+llvm-20.1.0-x86_64-pc-windows-msvc/bin/clang.exe",
+        "CMAKE_CXX_COMPILER": "C:/Users/User/Documents/clang+llvm-20.1.0-x86_64-pc-windows-msvc/bin/clang++.exe",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "windows_clang_release",
+      "displayName": "Clang Release",
+      "description": "Using Clang with Ninja in Release mode on Windows",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+        "CMAKE_C_COMPILER": "C:/Users/User/Documents/clang+llvm-20.1.0-x86_64-pc-windows-msvc/bin/clang.exe",
+        "CMAKE_CXX_COMPILER": "C:/Users/User/Documents/clang+llvm-20.1.0-x86_64-pc-windows-msvc/bin/clang++.exe",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "windows_msvc_debug",
+      "displayName": "MSVC Debug",
+      "description": "Using MSVC in Debug mode on Windows",
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+        "CMAKE_C_COMPILER": "cl",
+        "CMAKE_CXX_COMPILER": "cl",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "windows_msvc_release",
+      "displayName": "MSVC Release",
+      "description": "Using MSVC in Release mode on Windows",
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "${sourceDir}build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+        "CMAKE_C_COMPILER": "cl",
+        "CMAKE_CXX_COMPILER": "cl",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ]
+}
