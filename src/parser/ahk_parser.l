@@ -80,6 +80,9 @@ modifier        (<|>)?([!+\^&\$~#])+(<|>)?
 "{"                 { update_location(); return print_token(LBRACE); }
 "}"                 { update_location(); return print_token(RBRACE); }
 
+"Up"                { update_location(); return print_token(KEY_UP); }
+"Down"              { update_location(); return print_token(KEY_DOWN); }
+
 {modifier}          { update_location(); return print_token(HOTKEY_MOD); }
 {function_key}      { update_location(); return print_token(FUNCTION_KEY); }
 {numpad_key}        { update_location(); return print_token(NUMPAD_KEY); }
@@ -90,9 +93,6 @@ modifier        (<|>)?([!+\^&\$~#])+(<|>)?
 {joy_button}        { update_location(); return print_token(JOY_BUTTON); }
 {scancode}          { update_location(); return print_token(SCANCODE); }
 {virtual_key}       { update_location(); return print_token(VIRTUAL_KEY); }
-
-"Up"                { update_location(); return print_token(KEY_UP); }
-"Down"              { update_location(); return print_token(KEY_DOWN); }
 
 {keyword}           { update_location(); return print_token(KEYWORD); }
 {string}            { update_location(); yylval.str = _strdup(yytext); return print_token(STRING); }
